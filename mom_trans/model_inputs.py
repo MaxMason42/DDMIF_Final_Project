@@ -73,7 +73,7 @@ class ModelFeatures:
         total_time_steps,
         start_boundary=1990,
         test_boundary=2020,
-        test_end=2021,
+        test_end=2024,
         changepoint_lbws=None,
         train_valid_sliding=False,
         # add_buffer_years_to_test=1,  # TODO FIX THIS!!!!
@@ -578,7 +578,7 @@ class ModelFeatures:
                 active_entries = np.ones((arr.shape[0], arr.shape[1], arr.shape[2]))
                 for i in range(batch_size):
                     active_entries[i, sequence_lengths[i] :, :] = 0
-                sequence_lengths = np.array(sequence_lengths, dtype=np.int)
+                sequence_lengths = np.array(sequence_lengths, dtype=int)
 
                 if "active_entries" not in data_map:
                     data_map["active_entries"] = [

@@ -17,6 +17,20 @@ FEATURES_QUANDL_FILE_PATH = lambda lbw: os.path.join(
 
 FEATURES_QUANDL_FILE_PATH_DEFAULT = FEATURES_QUANDL_FILE_PATH(CPD_DEFAULT_LBW)
 
+
+
+CPD_WRDS_OUTPUT_FOLDER = lambda lbw: os.path.join(
+    "data", f"wrds_cpd_{(lbw if lbw else 'none')}lbw"
+)
+
+CPD_WRDS_OUTPUT_FOLDER_DEFAULT = CPD_WRDS_OUTPUT_FOLDER(CPD_DEFAULT_LBW)
+
+FEATURES_WRDS_FILE_PATH = lambda lbw: os.path.join(
+    "data", f"wrds_cpd_{(lbw if lbw else 'none')}lbw.csv"
+)
+
+FEATURES_WRDS_FILE_PATH_DEFAULT = FEATURES_WRDS_FILE_PATH(CPD_DEFAULT_LBW)
+
 QUANDL_TICKERS = [
     "ICE_SB",
     "CME_SF",
@@ -917,6 +931,15 @@ PINNACLE_ASSETS = [
     "ZW",
     "ZZ",
 ]
+
+
+WRDS_TICKERS = ['ADM','BG','FDP','LMNR','ALCO', 'FCX','NEM','SCCO','ALB', 'RGLD',  'DHI', 'LEN' , 'PHM' , 'NVR', 'TOL',
+                'PG', 'KO', 'PEP', 'INTC' , 'BA',  'T' , 'VZ' , 'CMCSA' , 'NEE' , 'DUK',  'MCK', 'CAH', 'GPC','GWW',
+                'HSIC',  'AMZN', 'HD','WMT','COST','TGT', 'JPM' , 'WFC','BAC','C','GS', 'GOOGL','META' , 'DIS' ,
+                'BKNG' , 'SEB' , 'TSN' , 'PPC',  'ABX' , 'FNV' , 'AU',
+                'KBH' , 'TMHC' , 'MTH', 'MDC','BZH', 'MMM' , 'JNJ' , 'GE' , 'HON','CAT', 'SO' , 'AEP' ,'EXC' , 'D' , 'XEL',
+                'SYY','ARW','AVT', 'WBA','CVS','DG','DLTR','BBY', 'MS','AIG','USB','PNC','MET', 
+                'NFLX' , 'EBAY' , 'EXPE' , 'ATVI' ,'PYPL']
 
 # TODO get rid of the ones not used get
 PINNACLE_ASSET_CLASS_MAPPING = {

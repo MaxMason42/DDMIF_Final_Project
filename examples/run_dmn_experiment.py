@@ -2,7 +2,7 @@ import os
 import argparse
 from settings.hp_grid import HP_MINIBATCH_SIZE
 import pandas as pd
-from settings.default import QUANDL_TICKERS
+from settings.default import WRDS_TICKERS
 from settings.fixed_params import MODLE_PARAMS
 from mom_trans.backtest import run_all_windows
 import numpy as np
@@ -10,12 +10,12 @@ from functools import reduce
 
 # define the asset class of each ticker here - for this example we have not done this
 TEST_MODE = False
-ASSET_CLASS_MAPPING = dict(zip(QUANDL_TICKERS, ["COMB"] * len(QUANDL_TICKERS)))
+ASSET_CLASS_MAPPING = dict(zip(WRDS_TICKERS, ["COMB"] * len(WRDS_TICKERS)))
 TRAIN_VALID_RATIO = 0.90
 TIME_FEATURES = False
 FORCE_OUTPUT_SHARPE_LENGTH = None
 EVALUATE_DIVERSIFIED_VAL_SHARPE = True
-NAME = "experiment_quandl_100assets"
+NAME = "experiment_wrds_3year_train_extended_assets"
 
 
 def main(
@@ -42,6 +42,10 @@ def main(
         architecture = "TFT"
         lstm_time_steps = 252
         changepoint_lbws = None
+    elif experiment == "TFT-CPD-21":
+        architecture = "TFT"
+        lstm_time_steps = 252
+        changepoint_lbws = [21]
     elif experiment == "TFT-CPD-126-21":
         architecture = "TFT"
         lstm_time_steps = 252
@@ -102,12 +106,12 @@ def main(
         if changepoint_lbws:
             features_file_path = os.path.join(
                 "data",
-                f"quandl_cpd_{np.max(changepoint_lbws)}lbw.csv",
+                f"wrds_cpd_{np.max(changepoint_lbws)}lbw.csv",
             )
         else:
             features_file_path = os.path.join(
                 "data",
-                "quandl_cpd_nonelbw.csv",
+                "wrds_cpd_nonelbw.csv",
             )
 
         run_all_windows(
@@ -143,6 +147,7 @@ if __name__ == "__main__":
                 "TFT-SHORT",
                 "TFT-SHORT-CPD-21",
                 "TFT-SHORT-CPD-63",
+                "TFT-CPD-21"
             ],
             help="Input folder for CPD outputs.",
         )
@@ -151,7 +156,7 @@ if __name__ == "__main__":
             metavar="s",
             type=int,
             nargs="?",
-            default=1990,
+            default=2017,
             help="Training start year",
         )
         parser.add_argument(
@@ -159,7 +164,7 @@ if __name__ == "__main__":
             metavar="t",
             type=int,
             nargs="?",
-            default=2016,
+            default=2020,
             help="Training end year and test start year.",
         )
         parser.add_argument(
@@ -167,7 +172,7 @@ if __name__ == "__main__":
             metavar="e",
             type=int,
             nargs="?",
-            default=2022,
+            default=2025,
             help="Testing end year.",
         )
         parser.add_argument(
