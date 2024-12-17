@@ -430,9 +430,9 @@ def run_single_window(
             **model_features.input_params,
             **{
                 "column_definition": model_features.get_column_definition(),
-                "num_encoder_steps": 0,  # TODO artefact
+                "num_encoder_steps": 0,
                 "stack_size": 1,
-                "num_heads": 4,  # TODO to fixed params
+                "num_heads": 6
             },
         )
     else:

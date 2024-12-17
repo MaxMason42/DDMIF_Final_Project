@@ -15,7 +15,7 @@ TRAIN_VALID_RATIO = 0.90
 TIME_FEATURES = False
 FORCE_OUTPUT_SHARPE_LENGTH = None
 EVALUATE_DIVERSIFIED_VAL_SHARPE = True
-NAME = "experiment_wrds_3year_train_extended_assets"
+NAME = "experiment_wrds_3year_train_6heads"
 
 
 def main(
@@ -42,6 +42,14 @@ def main(
         architecture = "TFT"
         lstm_time_steps = 252
         changepoint_lbws = None
+    elif experiment == "TFT-LONG":
+        architecture = "TFT"
+        lstm_time_steps = 378
+        changepoint_lbws = None
+    elif experiment == "TFT-LONG-CPD-21":
+        architecture = "TFT"
+        lstm_time_steps = 378
+        changepoint_lbws = [21]
     elif experiment == "TFT-CPD-21":
         architecture = "TFT"
         lstm_time_steps = 252
@@ -147,7 +155,9 @@ if __name__ == "__main__":
                 "TFT-SHORT",
                 "TFT-SHORT-CPD-21",
                 "TFT-SHORT-CPD-63",
-                "TFT-CPD-21"
+                "TFT-CPD-21",
+                "TFT-LONG",
+                "TFT-LONG-CPD-21"
             ],
             help="Input folder for CPD outputs.",
         )

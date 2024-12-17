@@ -932,14 +932,13 @@ PINNACLE_ASSETS = [
     "ZZ",
 ]
 
+WRDS_CPD_TICKERS = ['ADM', 'ALB', 'ALCO', 'AMZN', 'BA', 'BAC', 'BG', 'BKNG', 'C', 'CAH', 'CMCSA', 'DHI', 'DIS', 'DUK', 'FCX', 'FDP',
+           'GOOGL', 'GPC', 'GS', 'GWW', 'HSIC', 'INTC', 'JPM', 'KO', 'LEN', 'LMNR', 'MCK', 'META', 'NEE', 'NEM', 'NVR',
+           'PEP', 'PG', 'PHM', 'RGLD', 'SCCO', 'T', 'TOL', 'VZ', 'WFC', 'WMT']
 
-WRDS_TICKERS = ['ADM','BG','FDP','LMNR','ALCO', 'FCX','NEM','SCCO','ALB', 'RGLD',  'DHI', 'LEN' , 'PHM' , 'NVR', 'TOL',
-                'PG', 'KO', 'PEP', 'INTC' , 'BA',  'T' , 'VZ' , 'CMCSA' , 'NEE' , 'DUK',  'MCK', 'CAH', 'GPC','GWW',
-                'HSIC',  'AMZN', 'HD','WMT','COST','TGT', 'JPM' , 'WFC','BAC','C','GS', 'GOOGL','META' , 'DIS' ,
-                'BKNG' , 'SEB' , 'TSN' , 'PPC',  'ABX' , 'FNV' , 'AU',
-                'KBH' , 'TMHC' , 'MTH', 'MDC','BZH', 'MMM' , 'JNJ' , 'GE' , 'HON','CAT', 'SO' , 'AEP' ,'EXC' , 'D' , 'XEL',
-                'SYY','ARW','AVT', 'WBA','CVS','DG','DLTR','BBY', 'MS','AIG','USB','PNC','MET', 
-                'NFLX' , 'EBAY' , 'EXPE' , 'ATVI' ,'PYPL']
+WRDS_TICKERS = ['ADM', 'ALB', 'ALCO', 'AMZN', 'BA', 'BAC', 'BG', 'BKNG', 'C', 'CAH', 'CMCSA', 'DHI', 'DIS', 'DUK', 'FCX', 'FDP',
+           'GOOGL', 'GPC', 'GS', 'GWW', 'HSIC', 'INTC', 'JPM', 'KO', 'LEN', 'LMNR', 'MCK', 'META', 'NEE', 'NEM', 'NVR',
+           'PEP', 'PG', 'PHM', 'RGLD', 'SCCO', 'T', 'TOL', 'VZ', 'WFC', 'WMT']
 
 # TODO get rid of the ones not used get
 PINNACLE_ASSET_CLASS_MAPPING = {
