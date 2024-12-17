@@ -7,7 +7,8 @@ This code is from the paper [Trading with the Momentum Transformer: An Intellige
 2. Download the WRDS data with: `python -m data.download_wrds_data` and input your username and password when prompted
 3. Create Momentum Transformer input features with: `python -m examples.create_features_wrds`. In this example we use the top 5 stocks from each sector as of 2017.
 4. Run one of the Momentum Transformer or Slow Momentum with Fast Reversion experiments with `python -m examples.run_dmn_experiment <<EXPERIMENT_NAME>>`
-5. 
+5. If you want changepoint features then run the Changepoint Detection notebook. Select your specific stock and the start and end date for the WRDS query. Then use the select your lookback window length, input the same start and end date as you did previously, change the save location, and run. This will need to be done for every company for every lookback window size. (Make sure they are saved as "data/Changepoints/{ticker}.csv")
+6. To include the changepoint features to your input data just run `python -m examples.create_features_wrds <<lookback window length>>`.
 
 ## Results 
 The results from all the tests done in the paper Enhanced Momentum with Momentum Transformers can be found in the results folder.
