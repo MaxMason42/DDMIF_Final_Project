@@ -1,6 +1,6 @@
 # Trading with the Momentum Transformer
 ## About
-This code is from the paper [Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture](https://arxiv.org/pdf/2112.08534.pdf) and the paper [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/pdf/2105.13727.pdf). 
+This code is from the paper [Trading with the Momentum Transformer: An Intelligent and Interpretable Architecture](https://arxiv.org/pdf/2112.08534.pdf) and the paper [Slow Momentum with Fast Reversion: A Trading Strategy Using Deep Learning and Changepoint Detection](https://arxiv.org/pdf/2105.13727.pdf). They used to pull data futures data from Quandl but this has now been depricated. You can no longer get CME futures data for free on either Nasdaq Data Link or WRDS.
 
 ## Using the code
 1. Create a WRDS account.
