@@ -1,0 +1,7 @@
+{
+    "hidden_layer_size": 80,
+    "dropout_rate": 0.5,
+    "max_gradient_norm": 0.01,
+    "learning_rate": 0.01,
+    "batch_size": 128
+}
